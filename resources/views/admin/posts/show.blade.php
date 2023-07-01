@@ -14,7 +14,7 @@
         @forelse ($post->technologies as $technology )
             <span class="badge bg-info text-dark">{{ $technology->name }}</span>
         @empty
-            <span>Empty</span>
+
         @endforelse
     </div>
     <p>Tempo di lettura: {{ $post->reading_time }} min</p>
