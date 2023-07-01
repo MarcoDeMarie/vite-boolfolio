@@ -19,4 +19,11 @@ class PostController extends Controller
         return response()->json(compact('posts','types','technologies'));
 
     }
+
+    public function getTypes(){
+
+        $type = Type::all();
+
+        return response()->json($type);
+    }
 }
