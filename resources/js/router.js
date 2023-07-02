@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Home from './pages/Home.vue'
 import Contacts from './pages/Contacts.vue'
+import postDetail from './pages/PostDetail.vue'
 import Error404 from './pages/Error404.vue'
 
 
@@ -25,8 +26,14 @@ const router = createRouter({
             component: Contacts,
         },
 
+        {
+            path: '/dettaglio-post/:slug',
+            name: 'postDetail',
+            component: postDetail
+        },
 
-        // rotta per 404 da mettere in fondo a tutte le rotte
+
+
         {
             path: '/:pathMatch(.*)*',
             component: Error404,

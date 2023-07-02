@@ -21,7 +21,6 @@ export default {
                     this.posts = results.data.posts;
                     this.types = results.data.types;
                     this.technologies = results.data.technologies;
-                    console.log(this.posts);
                 })
         }
     },
@@ -64,7 +63,7 @@ export default {
             v-for="post in posts"
             :key="post.id"
             >
-            <span>{{ post.title }}</span> - <span>{{ post.date }}</span>  - <span>{{ types[0].name}}</span> - <span>{{ technologies[0].name}}</span>
+            <span class="no-decoration"><router-link  :to="{ name: 'postDetail', params:{ slug: post.slug } }" >{{ post.title }}</router-link></span> - <span>{{ post.date }}</span>  - <span>{{ types[0].name}}</span> - <span>{{ technologies[0].name}}</span>
             <!-- al posto di zero va [post.type_id] ma non funziona uguale l'altro -->
 
             </li>
@@ -74,5 +73,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+    a{
+        text-decoration: none;
+        color: black;
+    }
 </style>

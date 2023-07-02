@@ -14,6 +14,7 @@ export default {
         <li>
             <router-link :to="{ name:'contacts' }">contatti</router-link>
         </li>
+
     </ul>
 </header>
 </template>
@@ -27,10 +28,10 @@ ul{
         margin: 0 15px;
         a{
             text-transform: uppercase;
-            color: white;
+            color: black;
             text-decoration: none;
             &:hover, &.active{
-                color: yellow;
+                color: red;
             }
 
         }

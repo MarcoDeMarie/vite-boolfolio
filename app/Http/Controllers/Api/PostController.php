@@ -26,4 +26,15 @@ class PostController extends Controller
 
         return response()->json($type);
     }
+
+    public function getPostDetail($slug){
+
+        $post = Post::where('slug', $slug)->with('type', 'technologies')->first();
+        if($post->image_path) $post->image_path = asset('storage/' . $post->image_path) ;
+        else{
+            $post->image_path = asset('storage/uploads/placeholder.png') ;
+            $post->image_original_name = '- no image -';
+        }
+        return response()->json($post);
+    }
 }

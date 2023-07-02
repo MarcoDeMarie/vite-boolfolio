@@ -19,5 +19,6 @@ Route::namespace('Api')
         ->prefix('posts')
         ->group(function(){
             Route::get('/',[PostController::class, 'index']);
-            Route::get('/categories',[PostController::class, 'getCategories']);
+            Route::get('/type',[PostController::class, 'getTypes']);
+            Route::get('/{slug}',[PostController::class, 'getPostDetail']);
         });
