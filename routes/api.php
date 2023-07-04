@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,10 @@ Route::namespace('Api')
             Route::get('/',[PostController::class, 'index']);
             Route::get('/type',[PostController::class, 'getTypes']);
             Route::get('/{slug}',[PostController::class, 'getPostDetail']);
+        });
+
+Route::namespace('Api')
+        ->prefix('contacts')
+        ->group(function(){
+            Route::post('/mail',[ContactsController::class, 'sendMail']);
         });

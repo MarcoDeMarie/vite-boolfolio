@@ -9,6 +9,7 @@ use App\Models\Type;
 use App\Models\Technology;
 class PostController extends Controller
 {
+
     public function index(){
 
         $posts = Post::all();
@@ -20,12 +21,18 @@ class PostController extends Controller
 
     }
 
+
+    ///////////////////////////////////////////////////////////////
+
     public function getTypes(){
 
         $type = Type::all();
 
         return response()->json($type);
     }
+
+
+    /////////////////////////////////////////////////////////
 
     public function getPostDetail($slug){
 
@@ -37,4 +44,5 @@ class PostController extends Controller
         }
         return response()->json($post);
     }
+
 }
